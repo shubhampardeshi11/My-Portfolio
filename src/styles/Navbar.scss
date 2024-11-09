@@ -1,0 +1,114 @@
+@import 'variables';
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+  background: transparent;
+
+  &.scrolled {
+    background: rgba($primary-color, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-logo {
+    text-decoration: none;
+    
+    .logo-text {
+      color: $accent-color;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    a {
+      color: $text-primary;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $accent-color;
+      }
+    }
+
+    .resume-button {
+      padding: 0.75rem 1rem;
+      border: 1px solid $accent-color;
+      border-radius: 4px;
+      color: $accent-color;
+      
+      &:hover {
+        background: rgba($accent-color, 0.1);
+      }
+    }
+  }
+
+  // Mobile menu styles
+  .hamburger {
+    display: none;
+    cursor: pointer;
+
+    @media (max-width: $mobile) {
+      display: block;
+      
+      span {
+        display: block;
+        width: 25px;
+        height: 2px;
+        background: $accent-color;
+        margin: 5px 0;
+        transition: all 0.3s ease;
+      }
+
+      &.active {
+        span:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 5px);
+        }
+        span:nth-child(2) {
+          opacity: 0;
+        }
+        span:nth-child(3) {
+          transform: rotate(-45deg) translate(7px, -6px);
+        }
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    .nav-links {
+      position: fixed;
+      top: 70px;
+      right: -100%;
+      width: 100%;
+      height: calc(100vh - 70px);
+      background: $primary-color;
+      flex-direction: column;
+      padding: 2rem;
+      transition: all 0.3s ease;
+
+      &.active {
+        right: 0;
+      }
+    }
+  }
+}

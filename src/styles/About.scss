@@ -1,0 +1,72 @@
+
+// Variables
+$primary-color: #0a192f;  // Dark blue background
+$text-secondary: #8892b0;  // Muted text color
+$accent-color: #64ffda;    // Accent color for borders
+$mobile: 768px;           // Mobile breakpoint
+
+.about {
+    padding: 100px 0;
+    background-color: $primary-color;
+  
+    // ... existing container styles ...
+  
+    .about-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+  
+    // ... existing section-title styles ...
+  
+    .about-grid {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 50px;
+      align-items: center;
+  
+      @media (max-width: $mobile) {
+        grid-template-columns: 1fr;
+      }
+    }
+  
+    .about-text-container {
+      .text-content {
+        p {
+          color: $text-secondary;
+          font-size: 1.1rem;
+          line-height: 1.7;
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+  
+    .about-image-container {
+      position: relative;
+      
+      img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        border-radius: 10px;
+        filter: grayscale(100%) contrast(1);
+        transition: all 0.3s ease;
+        
+        &:hover {
+          filter: none;
+        }
+      }
+  
+      &::after {
+        content: '';
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        right: -20px;
+        bottom: -20px;
+        border: 2px solid $accent-color;
+        border-radius: 10px;
+        z-index: -1;
+      }
+    }
+  }

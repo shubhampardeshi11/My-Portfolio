@@ -1,0 +1,64 @@
+@import 'variables';
+
+.contact {
+  padding: 100px 0;
+  background-color: $primary-color;
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section-title {
+    color: $white;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .form-group {
+      input,
+      textarea {
+        width: 100%;
+        padding: 1rem;
+        background: $secondary-color;
+        border: 1px solid rgba($accent-color, 0.1);
+        border-radius: 5px;
+        color: $white;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+
+        &:focus {
+          outline: none;
+          border-color: $accent-color;
+        }
+      }
+
+      textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+    }
+
+    button {
+      padding: 1rem 2rem;
+      background: transparent;
+      border: 1px solid $accent-color;
+      border-radius: 5px;
+      color: $accent-color;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: rgba($accent-color, 0.1);
+      }
+    }
+  }
+}
