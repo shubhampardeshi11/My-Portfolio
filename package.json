@@ -46,8 +46,9 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "gh-pages": "^6.2.0",
     "sass": "^1.80.4"
   },
-  "homepage": "https://shubhampardeshi11.github.io/my-portfolio"
+  "homepage": "."
 }
